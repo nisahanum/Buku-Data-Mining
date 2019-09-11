@@ -254,3 +254,72 @@ Kategori                                                          & Hasil       
 \end{table}
 
 \par Jadi dapat dilihat bahwa dokumen dengan judul “CN235-220M NAU5 List Of Procedure Certification Plan” setelah melalui peroses text preprocessing dengan Algoritma Porter dan Metode NBC termasuk ke kategori Management karena memiliki probabilitas paling tinggi yaitu 3.8945 x 10-7.
+
+% =============================Boby J,H====================================
+
+\section{Metode TF-IDF}
+\subsection{Pengertian Metode TF-IDF} 
+TF-IDF adalah metode pembobotan yang paling umum digunakan untuk menggambarkan dokumen dalam vector space model. Dalam klasifikasi teks, fungsi pembobotan ini terkait dengan dua metode pembelajaran yang penting yaitu k-NN dan SVM. TF-IDF umumnya digunakan untuk membandingkan vektor query dengan vektor dokumen menggunakan kesamaan (similarity).
+Term Frequency (TF) adalah faktor yang menentukan bobot term pada suatu dokumen berdasarkan jumlah kemunculannya dalam dokumen tersebut. Nilai kumlah kemunculan suatu kata (term frequency) diperhitungkan dalam pemberian bobot terhadap suatu kata
+(term frequency) diperhitungkan dalam pemberian bobot terhadap suatu kata. 
+Semakin besar jumlah kemunculan suatu term dalam dokumen, semakin besar pula bobotnya dalam dokumen atau akan memberikan nilai kesesuaian yang semakin besar.
+Inverse Document Frequency (IDF) adalah pengurangan dominasi term yang sering muncul di berbagai dokumen. Hal ini diperlukan karena term yang banyak muncul di berbagai dokumen, dapat dianggap sebagai term umum (common term) sehingga tidak penting nilainya.
+Sebaliknya faktor kejarangmunculan kata (term scarcity) dalam koleksi dokumen harus diperhatikan dalam pemberian bobot. 
+Kata yang muncul pada sedikit dokumen harus dipandang sebagai kata yang lebih penting (uncommon term) daripada kata yang muncul pada banyak dokumen. 
+Pembobotan akan memperhitungkan faktor kebalikan frekuensi dokumen yang mengandung suatu kata (inverse document frequency). Hal ini merupakan usulan dari George Zipf. 
+Zipf mengamati bahwa frekuensi dari sesuatu cenderung kebalikan secara proposional dengan urutannya.
+
+\subsection{Kelebihan dan Kekurangan Metode TF-IDF}
+
+\subsection{Penjelasan Metode TF-IDF}
+Formula yang digunakan untuk menghitung bobot (w) masing-masing dokumen terhadap kata kunci adalah 
+\begin{equation}
+    Wdt = tfdt *Idft
+\end{equation}
+Dimana :
+\begin{itemize}
+    \item Wdt= bobot dokumen ke­d terhadap kata ke­t  
+    \item tfdt = banyaknya kata yang dicari pada sebuah 
+dokumen  
+    \item Idft = Inversed Document Frequency (log 
+(N/df) )
+    \item N = total dokumen  
+    \item df = banyak dokumen yang mengandung kata 
+yang dicari.
+\end{itemize}
+
+Setelah bobot (w) masing-masing dokumen diketahui, maka dilakukan proses \textit{sorting}/pengurutan dimana semakin besar nilai w, semakin besar tingkat similaritas dokumen tersebut kata yang dicari, demikian sebaliknya.
+
+\section{K-Nearest Neighbor (KNN)}
+\par K-Nearest Neighbor (KNN) adalah metode melakukan klasifikasi terhadap objek
+berdasarkan data pembelajaran yang jaraknya paling dekat dengan objek tersebut. Metode ini bertujuan untuk mengklasifikasikan objek baru berdasarkan atribut dan training sample.
+Diberikan suatu titik query, selanjutnya akan ditemukan sejumlah K objek atau titik training yang paling dekat dengan titik query. Nilai prediksi dari query akan ditentukan berdasarkan klasifikasi tetanggaan. \par 
+Algoritma K-Nearest Neighbor (KNN) adalah sebuah metode untuk melakukan klasifikasi terhadap objek berdasarkan data pembelajaran yang jaraknya paling dekat dengan objek tersebut. 
+Teknik ini sangat sederhana dan mudah diimplementasikan. Tahapannya sebegai berikut 
+\begin{figure}
+    \centering
+    \includegraphics{chapters/figures/metodeknn.JPG}
+    \caption{Proes Metode K Nearest Neighbor}
+    \label{fig:my_label}
+\end{figure}
+
+Mirip dengan teknik clustering, yaitu mengelompokkan suatu data baru berdasarkan jarak data baru itu ke beberapa data/tetangga terdekat. Pertama sebelum mencari jarak data ke tetangga adalah menentukan nilai K tetangga (neighbor). Lalu, untuk mendefinisikan jarak antara dua titik yaitu titik pada data training dan titik pada data testing, maka digunakan rumus Euclidean dengan persamaan \ref{knn1}, sebagai berikut:
+
+\begin{equation}
+\label{knn1}
+    d(a, b) =\sum^n _i=0 (Xi-Yi)^2
+\end{equation}
+\par Keterangan:
+\begin{itemize}
+    \item d (a,b) : jarak Euclidian
+    \item x : data 1
+    \item y : data 2
+    \item i : fitur ke -
+    \item n : jumlah fitur
+\end{itemize}
+
+\subsection{Kelebihan KNN}
+KNN memiliki beberapa kelebihan yaitu bahwa dia tangguh terhadap training data yang noisy dan efektif apabila data latih nya besar.
+
+\subsection{Kelemahan KNN}
+pertama KNN perlu menentukan nilai dari parameter K (jumlah dari tetangga terdekat). Kedua Pembelajaran berdasarkan jarak tidak jelas mengenai jenis jarak apa yang harus digunakan dan atribut mana yang harus digunakan untuk mendapatkan hasil yang terbaik. Ketiga biaya komputasi cukup tinggi karena diperlukan perhitungan jarak dari tiap sample uji pada keseluruhan sample latih.
