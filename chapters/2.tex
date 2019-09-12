@@ -205,3 +205,51 @@ Y= -15.599+40.786x1+0.394X2
 \item Setelah di temukan nilai total pendapatan perminggu kemudian di jumlahkan untuk mengetahui total pendapatan perbulan
 \item Untuk mengetahui reveniew nya total perbulan di akumulasikan ke dollar (perkalian 1MSCF= 4 US dollar).
 \end{enumerate}
+\subsection{Contoh soal 2}
+\par Kita mengambil contoh kasus pada uji normalitas, yaitu sebagai berikut: Seorang mahasiswa bernama Bambang melakukan penelitian tentang faktor-faktor yang mempengaruhi harga saham pada perusahaan di BEJ.\citep{priyatno2014spss} Bambang dalam penelitiannya ingin mengetahui hubungan antara rasio keuangan PER dan ROI terhadap harga saham. Dengan ini Bambang menganalisis dengan bantuan program SPSS dengan alat analisis regresi linear berganda. Dari uraian di atas maka didapat variabel dependen (Y) adalah harga saham, sedangkan variabel independen (X1 dan X2) adalah PER dan ROI.
+Data-data yang di dapat berupa data rasio dan ditabulasikan sebagai berikut: \begin{figure}[!htbp]
+    \centering
+    \includegraphics[scale=0.7]{figures/cs.JPG}
+    \caption{Tabulasi Data (Data Fiktif)}
+\end{figure}
+\newpage \par Langkah berikutnya sama dengan langkah di contoh soal 1. Mencari nilai a dan b nya. \begin{lstlisting}
+a= Y-b1X1-b2X2      
+a= 4662.491
+\end{lstlisting}
+\begin{figure}[!htbp]
+\includegraphics[scale=0.6]{figures/b1b2.JPG}
+    \label{Figure4}
+\end{figure}
+\begin{lstlisting}
+b1= -74.482
+b2= 692.107
+\end{lstlisting}
+Setelah variabel a dan b di temukan maka di masukkan ke dalam rumus seperti berikut: 
+Persamaan regresinya sebagai berikut:
+\begin{lstlisting}
+Y’ = a + b1X1+ b2X2
+Y’ =  4662,491 + (-74,482)X1 + 692,107X2
+Y’ =  4662,491 - 74,482X1 + 692,107X2
+\end{lstlisting}
+Keterangan:
+\begin{lstlisting}
+Y’        = Harga saham yang diprediksi (Rp)
+a          = konstanta
+b1,b2    = koefisien regresi
+X1        = PER (\%)
+X2        = ROI (\%)
+\end{lstlisting}
+\par Langkah berikutnya adalah memasukkan nilai x1(PER (\%)) dan x2(ROI (\%)) ke dalam rumus, sehingga di temukan hasil prediksi sebagai berikut:
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[scale=0.6]{figures/cs3.JPG}
+    \caption{Hasil Perhitungan Prediksi}
+\end{figure}
+\subsection{Contoh soal 3}
+\par Di contoh soal 3 ini kita akan menghitung data pengeluaran 10 rumah tangga, untuk pembelian barang tahan lama per minggu(Y), pendapatan per minggu (X1), dan jumlah anggota keluarga (X2).
+\par Berikut adalah data mentahan nya:
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[scale=0.7]{figures/css.JPG}
+    \caption{Data mentahan}
+\end{figure}
