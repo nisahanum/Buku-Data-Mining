@@ -13,17 +13,15 @@
         Kelemahan algoritma porter adalah hasil stemming tidak selalu menghasilkan \textit{real words}.
         Terdapat 6 langkah Stemming pada Algoritma Porter dan dalam setiap langkah memiliki aturan tersendiri. Berikut pada gambar \ref{6step} adalah penjelasannya:
        
-        \begin{figure}
-            \centerline {\includegraphics[width=0.65\textwidth]
-            {chapters/figures/porter_step.PNG}}
-            \caption{Langkah-langkah \textit{Algoritma Porter}}
-            \label{6step}
-        \end{figure}
-
+         \begin{figure}[!htpb]
+        \centering
+        \includegraphics[width=6cm]{figures/porter_step.PNG}
+        \caption{Non Linear
+        \label{6step}}
+        \end{figure} 
 \begin{enumerate}
-    \item Langkah 1 : hilankan sufiks –ed dan –ing.
-    \vspace{3 cm}
-\begin{table}[]
+    \item Langkah 1 : hilangkan sufiks –ed dan –ing.
+\begin{table}[!ht]
 \centering
 \begin{tabular}{|l|l|l|}
 \hline
@@ -32,10 +30,10 @@ Kata-kata & Peraturan  & Hasil \\ \hline
 \begin{tabular}[c]{@{}l@{}}amazing, amazingly, \\ amazingness\end{tabular}    & \begin{tabular}[c]{@{}l@{}}-ly dan -ing\\ -ss dan -ing\end{tabular} & amaz, amaz, amaz       \\ \hline
 \end{tabular}
 \end{table}
+\vspace{3cm}
 
     \item Langkah 2 : mengubah sufiks `y` ke `i`.
-    \vspace{3 cm}
-\begin{table}[]
+\begin{table}[!ht]
 \centering
 \begin{tabular}{|l|l|l|}
 \hline
@@ -46,8 +44,7 @@ dry       & -y ke -i  & dri   \\ \hline
 \end{table}
 
     \item Langkah 3 : Memetakan sufiks ganda ke sufiks \textit{single}.
-    % \vspace{3 cm}
-\begin{table}[]
+\begin{table}[!ht]
 \centering
 \begin{tabular}{|l|l|l|}
 \hline
@@ -57,8 +54,7 @@ national  & -ational ke -ation & nation \\ \hline
 \end{table}
 
     \item Langkah 4 : hilangkan sufiks -ness dan -full.
-    % \vspace{3 cm}
-\begin{table}[]
+\begin{table}[!ht]
 \centering
 \begin{tabular}{|l|l|l|}
 \hline
@@ -68,7 +64,7 @@ kindess  & -ness - & kind \\ \hline
 \end{table}
 
     \item Langkah 5 : hilangkan sufiks -ant, -ance dan -ence.
-\begin{table}[]
+\begin{table}[!ht]
 \centering
 \begin{tabular}{|l|l|l|}
 \hline
@@ -78,7 +74,7 @@ compliance  & -ance - & compli \\ \hline
 \end{table}
 
     \item Langkah 6 : hilangkan sufiks -e.
-\begin{table}[]
+\begin{table}[!ht]
 \centering
 \begin{tabular}{|l|l|l|}
 \hline
@@ -116,11 +112,11 @@ engine  & -e - & engin \\ \hline
 \par \textbf{Naïve bayes} dapat digunakan untuk berbagai macam keperluan antara lain untuk klasifikasi dokumen, deteksi spam atau filtering spam, dan masalah klasifikasi lainnya. Pada penelitian ini terdapat Data Latih atau \textbf{Training} dan Data Uji atau \textbf{Testing}.\textbf{ Data Training} menggunakan data yang sebelumnya sudah diinputkan ke dalam aplikasi CMS, kemudian dicari seberapa sering sebuah kata masuk kedalam suatu kategori. Data Uji atau \textbf{Data Testing} adalah data yang akan diuji dan menggunakan perhitungan, kemudian dicari nilai probabilitasnya menggunakan teorema bayes. Teorema bayes merupakan dasar aturan dari \textbf{naive bayes classifier} berikut teorema bayes akan disajikan rumus berikut \ref{nbr}:
 \begin{equation}
 \label{nbr}
-    P(W_n|V_n) = \frac{(n_k + 1)}{(jumlah frekuensi + jumlah kata)} 
+    P(W\_n|V\_n) = \frac{(n\_k + 1)}{(jumlah frekuensi + jumlah kata)} 
 \end{equation} 
 \par Keterangan \ref{nbr}:
-\par P(W_k|V_j) adalah Probabilitas bobot setiap kategori
-\par n_k adalah Nilai kemunculan frekuensi kata
+\par P(W\_k|V\_j) adalah Probabilitas bobot setiap kategori
+\par n\_k adalah Nilai kemunculan frekuensi kata
 \par jumlah frekuensi adalah Jumlah Kemunculan kata pada setiap kategori
 \par jumlah kata adalah Jumlah keseluruhan kata pada 
 
@@ -132,7 +128,7 @@ engine  & -e - & engin \\ \hline
 \end{equation} 
 
 \par Keterangan \ref{nbb}:
-\par P(V_j) adalah Probabilitas Kata
+\par P(V\_j) adalah Probabilitas Kata
 \par a adalah Jumlah dokumen pada setiap kategori
 \par b adalah Jumlah total keseluruhan dokumen pada data training
 
@@ -143,37 +139,37 @@ Perhitungan dengan menggunakan metode Naïve Bayes Classifier ada proses perhitu
     \begin{enumerate}
         \item 	Certification Management: Mengolah dokumen tentang sertifikasi dan izin terbang
     	\item Flight Test : Mengolah dokumen hasil tes terbang suatu pesawat.
-	    \item Performance & Stability : Mengolah dokumen performa stabilnya mesin pesawat.
+	    \item Performance \& Stability : Mengolah dokumen performa stabilnya mesin pesawat.
 	    \item Structure : Mengolah dokumen struktur mesin, cara kerja bagian sebuah pesawat.
-        \item Mechanical & Hydrouling : mengolah dokumen hydraulic.
-    	\ITEM Electrical System : Mengolah dokumen tentang elektrik dan kelistrikan pesawat.
+        \item Mechanical \& Hydrouling : mengolah dokumen hydraulic.
+    	\item Electrical System : Mengolah dokumen tentang elektrik dan kelistrikan pesawat.
 	    \item Avionic System : Mengolah dokumen test fungsi bagian pesawat.
-	    \item Propulsion & Fuel System : Mengolah dokumen bahan bakar.
+	    \item Propulsion \& Fuel System : Mengolah dokumen bahan bakar.
 	    \item Interior and Cabin Safety : Mengolah dokumen design interior cabin suatu pesawat
     \end{enumerate}
     Berikut pada tabel \ref{tab:a} adalah kata kunci dari setiap kategori yang melewati tahap data training:
-    \vspace{5 cm}
-    \begin{table}[]
+    \begin{table}[!ht]
     \caption{Tabel Kategori Kata Kunci}
     \label{tab:a}
     \centering
 \begin{tabular}{|l|l|}
 \hline
 Kategori                  & Kata Kunci                                                                                                  \\ \hline
-Certification Management  & \begin{tabular}[c]{@{}l@{}}Plan,\\   Certification, Modification, List, Configuration\end{tabular}          \\ \hline
-Flight Test               & \begin{tabular}[c]{@{}l@{}}Flight,\\   Test, Certification, Result\end{tabular}                             \\ \hline
-Performance \& Stability  & \begin{tabular}[c]{@{}l@{}}Engineering,\\   Justification, Performance, Qualities\end{tabular}              \\ \hline
-Structure                 & \begin{tabular}[c]{@{}l@{}}Analysis,\\   Stress, Strenght, Load\end{tabular}                                \\ \hline
-Mechanical \& Hydrouling  & \begin{tabular}[c]{@{}l@{}}Hydraulic,\\   Power, Technical\end{tabular}                                     \\ \hline
-Electrical System         & \begin{tabular}[c]{@{}l@{}}Electrical,\\   Lighting, Subsystem\end{tabular}                                 \\ \hline
-Avionic System            & \begin{tabular}[c]{@{}l@{}}Test,\\   Ground, Result, Procedure, Communication, Record, Require\end{tabular} \\ \hline
-Propulsion \& Fuel System & \begin{tabular}[c]{@{}l@{}}Fuel,\\   Hazard, Functional\end{tabular}                                        \\ \hline
-Interior and Cabin Safety & \begin{tabular}[c]{@{}l@{}}Interior,\\   Design, Cooling, Cabin, Air Conditioner\end{tabular}               \\ \hline
+Certification Management  & \begin{tabular}[c]{@{}l@{}}Plan,  Certification, Modification, List, Configuration\end{tabular}          \\ \hline
+Flight Test               & \begin{tabular}[c]{@{}l@{}}Flight,  Test, Certification, Result\end{tabular}                             \\ \hline
+Performance \& Stability  & \begin{tabular}[c]{@{}l@{}}Engineering,  Justification, Performance, Qualities\end{tabular}              \\ \hline
+Structure                 & \begin{tabular}[c]{@{}l@{}}Analysis,   Stress, Strenght, Load\end{tabular}                                \\ \hline
+Mechanical \& Hydrouling  & \begin{tabular}[c]{@{}l@{}}Hydraulic,  Power, Technical\end{tabular}                                     \\ \hline
+Electrical System         & \begin{tabular}[c]{@{}l@{}}Electrical,   Lighting, Subsystem\end{tabular}                                 \\ \hline
+Avionic System            & \begin{tabular}[c]{@{}l@{}}Test,   Ground, Result, Procedure, Communication, \\Record, Require\end{tabular} \\ \hline
+Propulsion \& Fuel System & \begin{tabular}[c]{@{}l@{}}Fuel,   Hazard, Functional\end{tabular}                                        \\ \hline
+Interior and Cabin Safety & \begin{tabular}[c]{@{}l@{}}Interior,   Design, Cooling, Cabin, Air Conditioner\end{tabular}               \\ \hline
 \end{tabular}
 \end{table}
 
 \par Kemudian setelah data training di dapatkan, maka selanjutnya adalah langkah pengujian. Dalam langkah pengujian ini maka akan dijumlahkan nilai probabilitas setiap kata pada setiap kategori kemudian dikalikan dengan probabilitas dokumen yang sudah dihitung. Untuk pengujian, akan dihitung dengan judul dokumen baru yang belum diketahui kategorinya. Judul dokumennya adalah : CN235-220M NAU5 List Of Procedure Certification Plan. Maka langkah pertama adalah melalui proses text mining yaitu preprocessing, kata kata yang di dapat adalah sebagai berikut.
-\begin{table}[]
+\begin{table}[!ht]
+\centering
 \caption{Tabel Frekuensi Kemunculan Kata}
 \begin{tabular}{|l|l|}
 \hline
@@ -188,7 +184,7 @@ Plan     & 1         \\ \hline
 \par Pada tabel 1 di dapat banyak frekuensi kemunculan kata pada judul dokumen baru atau data uji, kemudian akan dihitung nilai probabilitasnya pada setiap kategorinya. 
 \begin{enumerate}
     \item Kategori 1 – Management
-    \begin{table}[]
+    \begin{table}[!ht]
 \begin{tabular}{llll}
 \multicolumn{2}{l}{\begin{tabular}[c]{@{}l@{}}P(list |\\ Management)\end{tabular}}     & \multicolumn{2}{l}{= (0+1) : (71) = 0.0141}                                                                         \\
 \multicolumn{2}{l}{P(proced | Management)}                                             & \multicolumn{2}{l}{= (0+1) : (71) = 0.0141}                                                                         \\
@@ -198,13 +194,13 @@ Plan     & 1         \\ \hline
                                  &                                                     & \multicolumn{2}{l}{= 0.000003540488004}                                                                             \\
                                  & Probabilitas                                        & \multicolumn{2}{l}{\begin{tabular}[c]{@{}l@{}}= P(Management)\\ x P(|Management)\end{tabular}}                      \\
                                  &                                                     & \multicolumn{2}{l}{= 0.11 x 0.000003540488004}                                                                      \\
-                                 &                                                     & \multicolumn{2}{l}{\begin{tabular}[c]{@{}l@{}}0.00000038945368044 = \\ 3.8945 x 10^-7
+                                 &                                                     & \multicolumn{2}{l}{\begin{tabular}[c]{@{}l@{}}0.00000038945368044 = \\ 3.8945 x 10$^-7$
                                  \end{tabular}}
 \end{tabular}
 \end{table}
 
 \item 	Kategori 2 – Flight Test
-\begin{table}[]
+\begin{table}[!ht]
 \begin{tabular}{llll}
 \multicolumn{2}{l}{\begin{tabular}[c]{@{}l@{}}P(list |\\ Flight)\end{tabular}}     & \multicolumn{2}{l}{= (0+1) : (76) = 0.0132}                                          \\
 \multicolumn{2}{l}{P(proced | Flight)}                                             & \multicolumn{2}{l}{= (0+1) : (76) = 0.0132}                                          \\
@@ -219,7 +215,7 @@ Plan     & 1         \\ \hline
 \end{table}
 
 \item 	Kategori 3 – Performance 
-\begin{table}[]
+\begin{table}[!ht]
 \begin{tabular}{llll}
 \multicolumn{2}{l}{\begin{tabular}[c]{@{}l@{}}P(list |\\ Performance)\end{tabular}}    & \multicolumn{2}{l}{= (0+1) : (76) = 0.0132}                                                    \\
 \multicolumn{2}{l}{P(proced | Performance)}                                            & \multicolumn{2}{l}{= (0+1) : (76) = 0.0132}                                                    \\
@@ -238,6 +234,7 @@ Plan     & 1         \\ \hline
 \par Dari perhitungan diatas, didapatkan hasil probabilitas dari setiap kategori, berikut adalah hasil probabilitas dari setiap kategori.
 
 \begin{table}[]
+\centering
 \begin{tabular}{|l|l|}
 \hline
 Kategori                                                          & Hasil                            \\ \hline
@@ -298,7 +295,7 @@ Algoritma K-Nearest Neighbor (KNN) adalah sebuah metode untuk melakukan klasifik
 Teknik ini sangat sederhana dan mudah diimplementasikan. Tahapannya sebegai berikut 
 \begin{figure}
     \centering
-    \includegraphics{chapters/figures/metodeknn.JPG}
+    \includegraphics[scale=0.6]{figures/metodeknn.JPG}
     \caption{Proes Metode K Nearest Neighbor}
     \label{fig:my_label}
 \end{figure}

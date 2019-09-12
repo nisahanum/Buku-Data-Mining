@@ -1,9 +1,8 @@
 \section{\textit{Hierarchical Clustering}}
 \subsection{Pengertian \textit{Hierarchical Clustering}}
-\hspace{1cm}Strategi pengelompokan hierarchical clustering umumnya ada dua jenis yaitu Agglomerative (Bottm-Up) dan Devisve (Top-Down). Algoritma agglomerative hierarchical clustering dikarenakan; hasil dari pengelompokan data dapat dilihat dendrogram, tidak diperlukan penentuan jumlah cluster pada awal pengelompokan, dan agglomerative hierarchical clustering dengan pendekatan bawah-atas (buttom-up) dimana pengelompokan data dimulai dari kecil ke pengelompokan yang besar. 
-\par\hspace{0.5cm}Agglomerative hierarchical clustering (AHC) dengan menggunakan buttom-up, dimulai dari masing-masing data sebagai sebuah cluster, kemudian secara rekrusif mencar kelompok terdekat sebagai pasangan yang kemudian akan digabungkan menjadi kelompok yang lebih besar. Proses tersebut diulang terus sehingga tampak bergerak keatas membentuk hirarki .
-\par\hspace{1cm}Terdapat tiga teknik kedekatan dalam hierarchical clustering, yaitu; single linkage (jarak terdekat) atau tautan tunggal, average linkage (jarak rata-rata) atau tautan rata-rata,dan complete linkage (jarak terjauh) atau tautan lengkap.\citep*{pujakusuma2017pengelompokan}.
-
+Strategi pengelompokan hierarchical clustering umumnya ada dua jenis yaitu Agglomerative (Bottom-Up) dan Devisve (Top-Down). Algoritma agglomerative hierarchical clustering dikarenakan; hasil dari pengelompokan data dapat dilihat dendrogram, tidak diperlukan penentuan jumlah cluster pada awal pengelompokan, dan agglomerative hierarchical clustering dengan pendekatan bawah-atas (buttom-up) dimana pengelompokan data dimulai dari kecil ke pengelompokan yang besar. 
+\par Agglomerative hierarchical clustering (AHC) dengan menggunakan buttom-up, dimulai dari masing-masing data sebagai sebuah cluster, kemudian secara rekrusif mencar kelompok terdekat sebagai pasangan yang kemudian akan digabungkan menjadi kelompok yang lebih besar. Proses tersebut diulang terus sehingga tampak bergerak keatas membentuk hirarki .
+\par Terdapat tiga teknik kedekatan dalam hierarchical clustering, yaitu; single linkage (jarak terdekat) atau tautan tunggal, average linkage (jarak rata-rata) atau tautan rata-rata,dan complete linkage (jarak terjauh) atau tautan lengkap (\citep{pujakusuma2017pengelompokan}).
 \subsection{Langkah-langkah metode agglomerative hierarchical
 clustering}
 adalah sebagai berikut \citep*{alpiana2019penerapan} :
@@ -25,14 +24,14 @@ terdekat. Misalkan jarak antara cluster U dan V yang paling mirip dinotasikan de
 identitas dari cluster yang digabungkan dan levellevelnya (jarak atau kemiripan) dimana gabungannya ditempatkan.
     
 \end{enumerate} 
-
 \subsection{Teknik Kedekatan \textit{Hierarchical Clustering}}
 \subsubsection{\textit{Single Linkage}} 
-\paragraph{}
+\par
 \par\textit{Single Linkage (MIN)} menenutukan kedekatan diantara dua kelompok tersdekat (terkecil) antar dua data dari kluster yang berbeda. 
 \par Formulasi untuk \textit{Single Linkage (MIN)} adalah :
 \begin{figure} [htbp]
-    \includegraphics[scale=0.8] {gambarAHC/single.PNG}
+\centering
+    \includegraphics[scale=0.8] {figures/single.PNG}
     \label{fig:my_label}
 \end{figure}
 
@@ -41,11 +40,12 @@ Keterangan :
 \vspace{5cm}
 
 \subsubsection{\textit{Average  Linkage}} 
-\paragraph{}
+\par
 \par \textit{Average  Linkage(AVERAGE)} menentukan kedekatan diantara dua kelompok dari jarak rata-rata antar dua data dari cluster yang berbeda. 
 Formulasi untuk average linkage adalah : 
 \begin{figure} [htbp]
-    \includegraphics[scale=0.8] {gambarAHC/Average.PNG}
+\centering
+    \includegraphics[scale=0.8] {figures/Average.PNG}
     \label{fig:my_label}
 \end{figure}
 
@@ -54,12 +54,13 @@ Keterangan :
 \vspace{1cm}
 
 \subsubsection{\textit{Complete linkage}} 
-\paragraph{}
+\par
 \textit{Complete linkage(MAX)} menentukan kedekatan diantara dua kelompok dari jarak terjauh (terbesar) antara dua data dari cluster yang berbeda. Formulasi untuk complete linkage adalah : 
 
 \par Formulasi untuk \textit{Single Linkage (MIN)} adalah :
 \begin{figure} [htbp]
-    \includegraphics[scale=0.8] {gambarAHC/Complete.PNG}
+\centering
+    \includegraphics[scale=0.8] {figures/Complete.PNG}
     \label{fig:my_label}
 \end{figure}
 
@@ -70,9 +71,9 @@ dan V.
 \subsection{Implementasi \textit{Hierarchical Clustering}}
 \subsubsection{implementasi \textit{Hierarchical Clustering} pada Data Musik}
 
-\paragraph{}\textbf{Extraksi File Musik Dengan Feature Extraction Menggunakan Library Pyaudioanalysis}
+\par\textbf{Extraksi File Musik Dengan Feature Extraction Menggunakan Library Pyaudioanalysis}
 
-\paragraph{}\hspace{0.5cm}PyAudioAnalysis dapat digunakan untuk mengekstrak fitur audio, melatih dan menerapkan pengklasifikasian audio, mensegmentasikan stream audio dan memvisualisasikan hubungan konten. Library  ini ditulis dengan Python, yang merupakan bahasa pemrograman tingkat tinggi yang telah menarik banyak peminat, terutama dalam komunitas akademis dan ilmiah selama beberapa tahun terakhir.\citep*{giannakopoulos2015pyaudioanalysis}  
+\par\hspace{0.5cm}PyAudioAnalysis dapat digunakan untuk mengekstrak fitur audio, melatih dan menerapkan pengklasifikasian audio, mensegmentasikan stream audio dan memvisualisasikan hubungan konten. Library  ini ditulis dengan Python, yang merupakan bahasa pemrograman tingkat tinggi yang telah menarik banyak peminat, terutama dalam komunitas akademis dan ilmiah selama beberapa tahun terakhir.\citep*{giannakopoulos2015pyaudioanalysis}  
 
 
 
@@ -84,30 +85,26 @@ Untuk dapat menggunakan fitur ekstraksi pada library  pyAudioAnalysis diharuskan
 \end{enumerate}
 \begin{figure} [htbp]
     \centering
-    \includegraphics[scale=0.3] {gambarAHC/image009.png}
+    \includegraphics[scale=0.25] {figures/image009.png}
     \caption{\textit{ Clone library}}
 \end{figure}
-
-
-
-\paragraph{}\textbf{Install Dependencies Yang Digunakan Oleh Library  pyaudioanalysis }
+\par\textbf{Install Dependencies Yang Digunakan Oleh Library  pyaudioanalysis }
 \begin{enumerate}
     \item  NUMPY  : pip install numpy
     \par\hspace{1cm} Pada terminal terlihat dependencies NUMPY sudah terinstall dan file installan berada pada direktori c:\programdata\anaconda3\lib\sitepackages (1.15.1). Numpy adalah pustaka fundamental untuk perhitungan numerik menggunakan Python. Ini terutama digunakan untuk array,  representasi matriks dan penanganan, beserta dengan satu set fungsi array dasar masing-masing.
     
     \begin{figure} [htbp]
     \centering
-    \includegraphics[scale=0.5] {gambarAHC/image011.png}
+    \includegraphics[scale=0.4] {figures/image011.png}
     \caption{\textit{ Install Dependencies NUMPY }}
     \end{figure}
   
-    \vspace{5cm}
     \item MATPLOTLIB  : pip install matplotlib
     \par\hspace{1cm}Pada terminal terlihat dependencies MATPLOTLIB sudah terinstall dan file installan berada pada direktori c:\programdata\anaconda3\lib\sitepackages (2.2.3). Matplotlib menawarkan fungsionalitas penggambaran 2D, mirip dengan MATLAB
     
     \begin{figure} [htbp]
     \centering
-    \includegraphics[scale=0.4] {gambarAHC/image013.png}
+    \includegraphics[scale=0.3] {figures/image013.png}
     \caption{\textit{ Install Dependencies MATPLOTLIB  }}
     \end{figure}
   
@@ -117,7 +114,7 @@ Untuk dapat menggunakan fitur ekstraksi pada library  pyAudioAnalysis diharuskan
  
     \begin{figure} [htbp]
     \centering
-    \includegraphics[scale=0.5] {gambarAHC/image015.png}
+    \includegraphics[scale=0.5] {figures/image015.png}
     \caption{\textit{ Install Dependencies SCIPY   }}
     \end{figure}
     
@@ -126,7 +123,7 @@ Untuk dapat menggunakan fitur ekstraksi pada library  pyAudioAnalysis diharuskan
  
     \begin{figure} [htbp]
     \centering
-    \includegraphics[scale=0.4] {gambarAHC/image017.png}
+    \includegraphics[scale=0.4] {figures/image017.png}
     \caption{\textit{ Install Dependencies SKLEARN   }}
     \end{figure}
     
@@ -136,7 +133,7 @@ Untuk dapat menggunakan fitur ekstraksi pada library  pyAudioAnalysis diharuskan
  
     \begin{figure} [htbp]
     \centering
-    \includegraphics[scale=0.4] {gambarAHC/image019.png}
+    \includegraphics[scale=0.4] {figures/image019.png}
     \caption{\textit{ Install Dependencies hmmlearn    }}
     \end{figure}
    
@@ -146,7 +143,7 @@ Untuk dapat menggunakan fitur ekstraksi pada library  pyAudioAnalysis diharuskan
  
     \begin{figure} [htbp]
     \centering
-    \includegraphics[scale=0.5] {gambarAHC/image021.png}
+    \includegraphics[scale=0.5] {figures/image021.png}
     \caption{\textit{ Install Dependencies Simplejson    }}
     \end{figure}
      
@@ -158,7 +155,7 @@ Untuk dapat menggunakan fitur ekstraksi pada library  pyAudioAnalysis diharuskan
  
     \begin{figure} [htbp]
     \centering
-    \includegraphics[scale=0.5] {gambarAHC/image023.png}
+    \includegraphics[scale=0.5] {figures/image023.png}
     \caption{\textit{ Install Dependencies eyeD3     }}
     \end{figure}
     
@@ -166,42 +163,40 @@ Untuk dapat menggunakan fitur ekstraksi pada library  pyAudioAnalysis diharuskan
     \par\hspace{1cm} Pada terminal terlihat dependencies pydub sudah terinstall dan file installan berada pada direktori c:\programdata\anaconda3\lib\sitepackages (0.23.0). 
  \begin{figure} [htbp]
     \centering
-    \includegraphics[scale=0.5] {gambarAHC/image025.png}
+    \includegraphics[scale=0.5] {figures/image025.png}
     \caption{\textit{ Install Dependencies pydub}}
     \end{figure}
 \end{enumerate}
 
 
-  \paragraph{}\textbf{Mengubah Format File Musik Dari Mp3 Mejadi Wav }
-    \paragraph{}\hspace{1cm}Library  sudah dapat digunakan, sebelum menjalankan feature extraction file musik harus di rubah kedalam format WAV, dengan perintah berikut: “python audioAnalysis.py dirMp3toWav -i datamusik/ -r 16000 -c 1” Perintah diatas mengubah data musik yang berada pada direktori datamusik    dari format mp3 menjadi WAV. \begin{figure} [htbp]
+  \par\textbf{Mengubah Format File Musik Dari Mp3 Mejadi Wav }
+    \par\hspace{1cm}Library  sudah dapat digunakan, sebelum menjalankan feature extraction file musik harus di rubah kedalam format WAV, dengan perintah berikut: “python audioAnalysis.py dirMp3toWav -i datamusik/ -r 16000 -c 1” Perintah diatas mengubah data musik yang berada pada direktori datamusik    dari format mp3 menjadi WAV. \begin{figure} [htbp]
     \centering
-    \includegraphics[scale=0.35] {gambarAHC/image027.png}
+    \includegraphics[scale=0.35] {figures/image027.png}
     \caption{\textit{ convert mp3 to WAV}}
     \end{figure}
-    \vspace{5cm}
 
-    \paragraph{}\hspace{1cm}Pada gambar dibawah terlihat semua file musik pada direktori datamusik sudah diubah menjadi file yang memiliki format .WAV  dari yang awalnya berformat mp3. 
+    \par\hspace{1cm}Pada gambar dibawah terlihat semua file musik pada direktori datamusik sudah diubah menjadi file yang memiliki format .WAV  dari yang awalnya berformat mp3. 
     \begin{figure} [htbp]
     \centering
-    \includegraphics[scale=0.4] {gambarAHC/realimage029.PNG}
+    \includegraphics[scale=0.4] {figures/realimage029.PNG}
     \caption{\textit{ Hasil convert mp3 to WAV }}
     \end{figure}
 
-\paragraph{}\textbf{Menjalankan Ekstraksi Musik Menggunakan Feature Extraction}
-    \paragraph{}\hspace{1cm}Menjalankan fungsi feature extraction pada library  pyAudioAnalysis dengan  perintah : “python audioAnalysis.py  featureExtractionDir -i datamusik / -mw 1.0 -ms 1.0 -sw 0.050 -ss 0.050”.  Perintah ini akan mengekstrak semua file musik yang memiliki format .WAV pada direktori datamusik yang memiliki output CSV.  \begin{figure} [htbp]
+\par\textbf{Menjalankan Ekstraksi Musik Menggunakan Feature Extraction}
+    \par\hspace{1cm}Menjalankan fungsi feature extraction pada library  pyAudioAnalysis dengan  perintah : “python audioAnalysis.py  featureExtractionDir -i datamusik / -mw 1.0 -ms 1.0 -sw 0.050 -ss 0.050”.  Perintah ini akan mengekstrak semua file musik yang memiliki format .WAV pada direktori datamusik yang memiliki output CSV.  \begin{figure} [htbp]
     \centering
-    \includegraphics[scale=0.4] {gambarAHC/image031.png}
+    \includegraphics[scale=0.4] {figures/image031.png}
     \caption{\textit{fungsi feature extraction }}
     \end{figure}
     
     Pada gambar dibawah terlihat semua file musik pada direktori data musik yang memiliki format .WAV  sudah diekstraksi dan hasil ekstraksi setiap lagu akan menghasilkan  file csv. Kemudian data tersebut di processing dengan menggabungkan semua data kedalam 1 file csv. 
      \begin{figure} [htbp]
     \centering
-    \includegraphics[scale=0.35] {gambarAHC/image033.png}
+    \includegraphics[scale=0.35] {figures/image033.png}
     \caption{\textit{Output fungsi feature extraction}}
     \end{figure}
-  
-\paragraph{}\textbf{Penerapan Algoritma Agglomerative Hierachical Pada Content Musik} 
+\par\textbf{Penerapan Algoritma Agglomerative Hierachical Pada Content Musik} 
 
 % Please add the following required packages to your document preamble:
 % \usepackage{graphicx}
@@ -228,12 +223,11 @@ Judul & \begin{tabular}[c]{@{}l@{}}Zero Crossing \\ Rate\end{tabular} & Energy &
 \end{tabular}%
 }
 \end{table}
-\vspace{5cm}
 
 % Please add the following required packages to your document preamble:
 % \usepackage{graphicx}
 \begin{table}[htbp]
-\captionsetup{singlelinecheck=off}
+\centering
 \caption{Penamaan musik}
 \label{tab:my-table}
 \resizebox{0.8\textwidth}{!}{%
@@ -257,7 +251,7 @@ Judul & \begin{tabular}[c]{@{}l@{}}Zero Crossing \\ Rate\end{tabular} & Energy &
 % Please add the following required packages to your document preamble:
 % \usepackage{graphicx}
 \begin{table}[htbp]
-\captionsetup{singlelinecheck=off}
+\centering
 \caption{Kriteria Kluster}
 \label{tab:my-table}
 \resizebox{0.8\textwidth}{!}{%
@@ -276,38 +270,38 @@ K4 & Anxious (amarah, kacau, konflik) \\ \hline
 \begin{enumerate}
     \item  Dari data ekstraksi musik pada Tabel \ref{test} akan dihitung  matrik jarak antar data menggunakan matrik Euclidian Distance, dengan rumus :
     \begin{figure} [htbp]
-    \includegraphics[scale=0.55] {gambarAHC/AHC1.PNG}
+    \includegraphics[scale=0.32]{figures/AHC1.jpg}
     \end{figure}
     
     \begin{figure} [htbp]
-    \includegraphics[scale=0.55] {gambarAHC/AHC2.PNG}
+    \includegraphics[scale=0.32] {figures/AHC2.jpg}
     \end{figure}
     \vspace{4cm}
     
     \begin{figure} [htbp]
-    \includegraphics[scale=0.53] {gambarAHC/AHC3.PNG}
+    \includegraphics[scale=0.53] {figures/AHC3.PNG}
     \end{figure}
        
     
     \begin{figure} [htbp]
-    \includegraphics[scale=0.53] {gambarAHC/AHC4.PNG}
+    \includegraphics[scale=0.53] {figures/AHC4.PNG}
     \end{figure}
        \vspace{5cm}
 
     
     \begin{figure} [htbp]
-    \includegraphics[scale=0.52] {gambarAHC/AHC5.PNG}
+    \includegraphics[scale=0.52] {figures/AHC5.PNG}
     \end{figure}
    
     \begin{figure} [htbp]
-    \includegraphics[scale=0.7] {gambarAHC/66.PNG}
+    \includegraphics[scale=0.7] {figures/66.PNG}
     \end{figure}
        \vspace{6cm}
     
 % Please add the following required packages to your document preamble:
 % \usepackage{graphicx}
 \begin{table}[htbp]
-\captionsetup{singlelinecheck=off}
+\centering
 \caption{Matrik Jarak, dengan Euclidian Distance}
 \label{tab:my-table}
 \resizebox{0.7\textwidth}{!}{%
@@ -350,7 +344,7 @@ D(13)10 = MAX(0.34, 0.36) = 0.36
 % Please add the following required packages to your document preamble:
 % \usepackage{graphicx}
 \begin{table}[htbp]
-\captionsetup{singlelinecheck=off}
+\centering
 \caption{Matrik Jarak, d(1,3)}
 \label{tab:my-table}
 \resizebox{0.6\textwidth}{!}{%
@@ -390,7 +384,7 @@ D(5,9)10 = MAX(0.49, 0.36) = 0.49
 % Please add the following required packages to your document preamble:
 % \usepackage{graphicx}
 \begin{table}[htbp]
-\captionsetup{singlelinecheck=off}
+\centering
 \caption{Matrik Jarak, d(5,9)}
 \label{tab:my-table}
 \resizebox{0.6\textwidth}{!}{%
@@ -426,7 +420,7 @@ D(4,6)10=MAX (0.90,0.82)=0.90
 % Please add the following required packages to your document preamble:
 % \usepackage{graphicx}
 \begin{table}[htbp]
-\captionsetup{singlelinecheck=off}
+\centering
 \caption{Matrik Jarak, d(4,6)}
 \label{tab:my-table}
 \resizebox{0.6\textwidth}{!}{%
@@ -459,7 +453,7 @@ D(1,3,2)10 = MAX(0.34,0.36,0.19)=0.36
 % Please add the following required packages to your document preamble:
 % \usepackage{graphicx}
 \begin{table}[htbp]
-\captionsetup{singlelinecheck=off}
+\centering
 \caption{ Matrik Jarak, d(1,3,2}
 \label{tab:my-table}
 \resizebox{0.4\textwidth}{!}{%
@@ -489,7 +483,7 @@ D(7,8)10 = MAX(0.60,0.45)=0.60
 % Please add the following required packages to your document preamble:
 % \usepackage{graphicx}
 \begin{table}[htbp]
-\captionsetup{singlelinecheck=off}
+\centering
 \caption{ Matrik Jarak, d(7,8) }
 \label{tab:my-table}
 \resizebox{0.4\textwidth}{!}{%
@@ -513,11 +507,10 @@ D(5,9,7,8)4,6 = MAX(0.48,0.36,0.55,0.45,0.31.0.25,0.47,0.43)=0.55
 
 D(5,9,7,8)10 = MAX(0.49,0.39,0.60,0.45)=0.60
 
-\vspace{5cm}
 % Please add the following required packages to your document preamble:
 % \usepackage{graphicx}
 \begin{table}[htbp]
-\captionsetup{singlelinecheck=off}
+\centering
 \caption{Matrik Jarak, d(5,9,7,8)}
 \label{tab:my-table}
 \resizebox{0.4\textwidth}{!}{%
@@ -545,7 +538,7 @@ Kluster 4 : (10) linkin park- burn it down
 
 \subsection{ Validasi Hasil Perhitungan Agglomerative Hierarchical Clustering menngunakan tools RapidMiner}
  \begin{figure} [htbp]
-    \includegraphics[scale=0.28] {gambarAHC/7.PNG}
+    \includegraphics[scale=0.28] {figures/7.PNG}
     \end{figure}
     \vspace{5cm}
 
@@ -573,10 +566,6 @@ Fanny & 145 & 68 & 28 & 94 & 51 \\ \hline
 Lancelot & 154 & 99 & 51 & 58 & 48 \\ \hline
 Rias Gremory & 165 & 91 & 26 & 64 & 77 \\ \hline
 \end{tabular}%
-}
+ }
 \end{table}
 \end{enumerate}
-
-
-
-
