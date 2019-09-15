@@ -255,19 +255,53 @@ Kategori                                                          & Hasil       
 % =============================Boby J,H====================================
 
 \section{Metode TF-IDF}
-\subsection{Pengertian Metode TF-IDF} 
-TF-IDF adalah metode pembobotan yang paling umum digunakan untuk menggambarkan dokumen dalam vector space model. Dalam klasifikasi teks, fungsi pembobotan ini terkait dengan dua metode pembelajaran yang penting yaitu k-NN dan SVM. TF-IDF umumnya digunakan untuk membandingkan vektor query dengan vektor dokumen menggunakan kesamaan (similarity).
-Term Frequency (TF) adalah faktor yang menentukan bobot term pada suatu dokumen berdasarkan jumlah kemunculannya dalam dokumen tersebut. Nilai kumlah kemunculan suatu kata (term frequency) diperhitungkan dalam pemberian bobot terhadap suatu kata
-(term frequency) diperhitungkan dalam pemberian bobot terhadap suatu kata. 
-Semakin besar jumlah kemunculan suatu term dalam dokumen, semakin besar pula bobotnya dalam dokumen atau akan memberikan nilai kesesuaian yang semakin besar.
-Inverse Document Frequency (IDF) adalah pengurangan dominasi term yang sering muncul di berbagai dokumen. Hal ini diperlukan karena term yang banyak muncul di berbagai dokumen, dapat dianggap sebagai term umum (common term) sehingga tidak penting nilainya.
-Sebaliknya faktor kejarangmunculan kata (term scarcity) dalam koleksi dokumen harus diperhatikan dalam pemberian bobot. 
-Kata yang muncul pada sedikit dokumen harus dipandang sebagai kata yang lebih penting (uncommon term) daripada kata yang muncul pada banyak dokumen. 
-Pembobotan akan memperhitungkan faktor kebalikan frekuensi dokumen yang mengandung suatu kata (inverse document frequency). Hal ini merupakan usulan dari George Zipf. 
-Zipf mengamati bahwa frekuensi dari sesuatu cenderung kebalikan secara proposional dengan urutannya.
+\subsection{Pengertian Metode TF-IDF}
+TF-IDF adalah metode pembobotan yang
+paling umum digunakan untuk menggambarkan
+dokumen dalam vector space model. Dalam
+klasifikasi teks, fungsi pembobotan ini terkait
+dengan dua metode pembelajaran yang penting
+yaitu k-NN dan SVM. TF-IDF umumnya
+digunakan untuk membandingkan vektor query
+dengan vektor dokumen menggunakan
+kesamaan (similarity).
+Term Frequency (TF) adalah faktor yang
+menentukan bobot term pada suatu dokumen
+berdasarkan jumlah kemunculannya dalam
+dokumen tersebut. Nilai kumlah kemunculan
+suatu kata (term frequency) diperhitungkan
+dalam pemberian bobot terhadap suatu kata
+(term frequency) diperhitungkan dalam
+pemberian bobot terhadap suatu kata. Semakin
+besar jumlah kemunculan suatu term dalam
+dokumen, semakin besar pula bobotnya dalam
+dokumen atau akan memberikan nilai
+kesesuaian yang semakin besar.
+Inverse Document Frequency (IDF) adalah
+pengurangan dominasi term yang sering muncul
+di berbagai dokumen. Hal ini diperlukan karena
+term yang banyak muncul di berbagai
+dokumen, dapat dianggap sebagai term umum
+(common term) sehingga tidak penting nilainya.
+Sebaliknya faktor kejarangmunculan kata (term
+scarcity) dalam koleksi dokumen harus
+diperhatikan dalam pemberian bobot. Kata yang
+muncul pada sedikit dokumen harus dipandang
+sebagai kata yang lebih penting (uncommon
+term) daripada kata yang muncul pada banyak
+dokumen. Pembobotan akan memperhitungkan
+faktor kebalikan frekuensi dokumen yang
+mengandung suatu kata (inverse document
+frequency). Hal ini merupakan usulan dari
+George Zipf. Zipf mengamati bahwa frekuensi
+dari sesuatu cenderung kebalikan secara
+proposional dengan urutannya.
 
-\subsection{Kelebihan dan Kekurangan Metode TF-IDF}
-
+\subsection{Kelebihan Metode TF-IDF}
+Metode TF/IDF dikenal sebagai algorithma yang sederhana namun relevan dalam melakukan pencocokan kata pada sebuah dokumen.
+\subsection{Kekurangan Metode TF-IDF}
+penggunaan fitur urutan kata dalam pembobotan masih memiliki kekurangan.
+Hal tersebut dikarenakan contohnya terdapat beberapa dokumen yang sangat panjang namun tidak relevan. Dokumendokumen ini biasanya melakukan banyak perulangan kata-kata. Sebaliknya, terdapat dokumen yang pendek namun di dalamnya memuat informasi yang penting sehingga urutan kata query yang ada dalam dokumen tersebut lebih sedikit. Oleh karena itu, diperlukan proses penyesuaian terhadap fitur urutan kata tersebut dengan melibatkan fitur panjang dokumen sehingga dokumen yang diha
 \subsection{Penjelasan Metode TF-IDF}
 Formula yang digunakan untuk menghitung bobot (w) masing-masing dokumen terhadap kata kunci adalah 
 \begin{equation}
@@ -287,21 +321,85 @@ yang dicari.
 
 Setelah bobot (w) masing-masing dokumen diketahui, maka dilakukan proses \textit{sorting}/pengurutan dimana semakin besar nilai w, semakin besar tingkat similaritas dokumen tersebut kata yang dicari, demikian sebaliknya.
 
+\subsection{Penerapan Metode TF-IDF}
+Berikut dibawah ini diberikan contoh kasus perhitungan bobot dokumen terhadap query, dengan menggunakan metTF-IDF.
+\subsubsection{Contoh Soal 1}
+\par Contoh query: gold silver truck. Sehingga didapatkan query terms (Q):
+\begin{itemize}
+    \item gold
+    \item silver
+    \item truck
+\end{itemize}
+
+Untuk koleksi dokumen nya terdapat:
+\begin{itemize}
+    \item dokumen 1 \textbf{(d1)} = Shipment of gold damaged in a fire
+    \item dokumen 2 \textbf{(d2)} = Delivery of silver arrived in a silver truck
+    \item dokumen 3 \textbf{(d3)} = Shipment of gold arrived in a truck
+\end{itemize}
+
+\par Jadi total jumlah dokumen dalah koleksi dokumen \textbf{(D) = 3}\\
+
+\par Untuk setiap query dan dokumen dalam koleksi, dilakukan pemotongan string berdasarkan tiap kata yang menyusunnya, menghilangkan tanda baca, angka dan stopword.
+
+\par Setelah melalui proses ini, maka kata \textbf{“of”}, \textbf{“in”}, dan \textbf{“a”} pada ketiga dokumen dihapus lalu di-stemming sehingga didapatkan term-term (documents terms) sebagai berikut:\\
+
+\textbf{– ship – gold – damage – fire – deliver – silver – arrive – truck} \\
+
+Tahapan proses keseluruhan diatas dinamakan preprocessing text.
+\par Pada tahap selanjutnya tiap dokumen diwujudkan sebagai sebuah vektor dengan elemen sebanyak term query yang terdapat dalam tiap dokumen yang berhasil dikenali dari tahap ekstraksi dokumen sebelumnya. Vektor tersebut beranggotakan bobot dari setiap term query yang dihitung berdasarkan metode TF-IDF.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=0.6]{chapters/figures/diagram1.JPG}
+    \label{Figure4}
+    \caption{Daigram Representasi Term Query Pada Ruang Vektor}
+\end{figure}
+
+\par Fungsi metode ini adalah untuk mencari representasi nilai dari tiap dokumen dalam koleksi. Dari sini akan dibentuk suatu vektor antara dokumen dan query yang ditentukan oleh nilai bobot term query dalam dokumen.
+
+\par Semakin besar nilai perhitungan bobot yang diperoleh maka semakin tinggi tingkat similaritas dokumen terhadap query. Contohnya untuk perhitungan bobot \textbf{(w)} term query silver dalam dokumen 2 \textbf{(d2)} = Delivery of silver arrived in a silver truck, yaitu: jumlah kemunculan term silver dalam dokumen 2 \textbf{(d2)} adalah sebanyak dua kali \textbf{(tf = 2)}, total dokumen yang ada di koleksi sebanyak tiga dokumen \textbf{(D)=3}, dari ketiga dokumen dalam koleksi, term silver muncul pada dokumen 2 \textbf{(d2)} saja, sehingga total dokumen yang mengandung term silver adalah satu dokumen \textbf{(df)=1}, sehingga dapat diperoleh nilai bobot term silver pada dokumen 2 \textbf{(d2)}
+\begin{equation}
+    W ij = tfij xlog(D/dfi) + 1
+\end{equation}
+\begin{equation}
+    W ij = 2 x (log(3/1) + 1
+\end{equation}
+\begin{equation}
+    W ij = 2 x (0.477 + 1)
+\end{equation}
+
+\par Dengan demikian dapat diperoleh nilai bobot (w) untuk setiap term pada query dalam masing-masing dokumen: 
+
+\begin{table}[]
+\centering
+\caption{Data Jarak Dari Titik Awal}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+\hline
+Q      & d1 & d2 & d3 & df & IDF   & IDF+1 & D1    & D2    & D3    \\ \hline
+GOLD   & 1  & 0  & 1  & 2  & 0.176 & 0.176 & 1.176 & 0     & 1.176 \\ \hline
+SILVER & 0  & 2  & 0  & 1  & 0.477 & 1.477 & 0     & 2.954 & 0     \\ \hline
+TRUCK  & 1  & 1  & 1  & 2  & 0.176 & 1.176 & 0     & 1.176 & 1.176 \\ \hline
+       &    &    &    &    &       &       & 1.176 & 4.130 & 2.352 \\ \hline
+\end{tabular}
+\end{table}
+
 \section{K-Nearest Neighbor (KNN)}
 \par K-Nearest Neighbor (KNN) adalah metode melakukan klasifikasi terhadap objek
 berdasarkan data pembelajaran yang jaraknya paling dekat dengan objek tersebut. Metode ini bertujuan untuk mengklasifikasikan objek baru berdasarkan atribut dan training sample.
 Diberikan suatu titik query, selanjutnya akan ditemukan sejumlah K objek atau titik training yang paling dekat dengan titik query. Nilai prediksi dari query akan ditentukan berdasarkan klasifikasi tetanggaan. \par 
 Algoritma K-Nearest Neighbor (KNN) adalah sebuah metode untuk melakukan klasifikasi terhadap objek berdasarkan data pembelajaran yang jaraknya paling dekat dengan objek tersebut. 
-Teknik ini sangat sederhana dan mudah diimplementasikan. Tahapannya sebegai berikut 
+Teknik ini sangat sederhana dan mudah diimplementasikan. Tahapannya sebegai berikut :
+\newpage
 \begin{figure}
     \centering
-    \includegraphics[scale=0.6]{figures/metodeknn.JPG}
+    \centerline{\includegraphics[width=0.60\textwidth]{chapters/figures/metodeknn.JPG}}
     \caption{Proes Metode K Nearest Neighbor}
     \label{fig:my_label}
 \end{figure}
 
 Mirip dengan teknik clustering, yaitu mengelompokkan suatu data baru berdasarkan jarak data baru itu ke beberapa data/tetangga terdekat. Pertama sebelum mencari jarak data ke tetangga adalah menentukan nilai K tetangga (neighbor). Lalu, untuk mendefinisikan jarak antara dua titik yaitu titik pada data training dan titik pada data testing, maka digunakan rumus Euclidean dengan persamaan \ref{knn1}, sebagai berikut:
-
+\\
 \begin{equation}
 \label{knn1}
     d(a, b) =\sum^n _i=0 (Xi-Yi)^2
@@ -315,8 +413,84 @@ Mirip dengan teknik clustering, yaitu mengelompokkan suatu data baru berdasarkan
     \item n : jumlah fitur
 \end{itemize}
 
-\subsection{Kelebihan KNN}
-KNN memiliki beberapa kelebihan yaitu bahwa dia tangguh terhadap training data yang noisy dan efektif apabila data latih nya besar.
+\subsection{Tahapan Langkah Algoritma K-NN}
+\begin{enumerate}
+    \item Menentukan parameter k (jumlah tetangga paling dekat).
+    \item Menghitung kuadrat jarak eucliden objek terhadap data training yang diberikan.
+    \item Mengurutkan hasil no 2 secara ascending (berurutan dari nilai tinggi ke rendah)
+    \item Mengumpulkan kategori Y (Klasifikasi nearest neighbor berdasarkan nilai k)
+    \item Dengan menggunakan kategori nearest neighbor yang paling mayoritas maka dapat dipredisikan kategori objek.
+\end{enumerate}
+\subsection{Kelebihan K-Nearest Neighbor (KNN)}
+KNN memiliki beberapa kelebihan yaitu :
+\begin{enumerate}
+    \item Sangat nonlinear
+    \item Mudah dipahami dan diimplementasikan
+    \item tangguh terhadap training data yang noisy dan efektif apabila data latih nya besar.
+\end{enumerate}
 
-\subsection{Kelemahan KNN}
-pertama KNN perlu menentukan nilai dari parameter K (jumlah dari tetangga terdekat). Kedua Pembelajaran berdasarkan jarak tidak jelas mengenai jenis jarak apa yang harus digunakan dan atribut mana yang harus digunakan untuk mendapatkan hasil yang terbaik. Ketiga biaya komputasi cukup tinggi karena diperlukan perhitungan jarak dari tiap sample uji pada keseluruhan sample latih.
+\subsection{Kekurangan K-Nearest Neighbor (KNN)}
+KNN memiliki beberapa kekurangan yaitu :
+\begin{enumerate}
+    \item Tidak menangani nilai hilang (missing value) secara implisit
+    \item Sensitif terhadap data pencilan (outlier)
+    \item Perlu menentukan nilai dari parameter K (jumlah dari tetangga terdekat)
+    \item Rentan terhadap variabel yang non-informatif
+    \item Rentan terhadap dimensionalitas yang tinggi
+    \item Rentan terhadap perbedaan rentang variabel
+    \item Nilai komputasi yang tinggi
+    \item Pembelajaran berdasarkan jarak tidak jelas
+\end{enumerate}
+
+\subsection{Penerapan K-Nearest Neighbor (KNN)}
+\par Terdapat beberapa data yang berasal dari survey questioner tentang klasifikasi kualitas kertas tissue apakah baik atau jelek, dengan objek training dibawah ini menggunakan dua attribute yaitu daya tahan terhadap asam dan kekuatan.
+\newpage
+\begin{table}[]
+\centering
+\caption{Contoh perhitungan k-nn}
+\begin{tabular}{|l|l|l|}
+\hline
+\begin{tabular}[c]{@{}l@{}}X1 = Daya \\ tahan asam \\ (Detik\end{tabular} & \begin{tabular}[c]{@{}l@{}}X2 = \\ Kekuatan\\ (kg/m2)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Y = \\ Klasifikasi\end{tabular} \\ \hline
+8                                                                         & 4                                                                  & Baik                                                       \\ \hline
+4                                                                         & 5                                                                  & Jelek                                                      \\ \hline
+4                                                                         & 6                                                                  & Jelek                                                      \\ \hline
+7                                                                         & 7                                                                  & Baik                                                       \\ \hline
+5                                                                         & 6                                                                  & Jelek                                                      \\ \hline
+6                                                                         & 5                                                                  & Baik                                                       \\ \hline
+\end{tabular}
+\end{table}
+
+\par Akan diproduksi kembali kertas tissue dengan attribute \textbf{X1=7} dan \textbf{X2=4}, tanpa harus mengeluarkan biaya untuk melakukan survey, maka dapat diklasifikasikan kertas tissue tersebut termasuk yang baik atau jelek.
+\newpage
+
+\begin{table}[]
+\centering
+\caption{contoh perhitungan k-nn (2)}
+\begin{tabular}{|l|l|l|}
+\hline
+X1 & X2 & \begin{tabular}[c]{@{}l@{}}Squere distance\\   to query distance \\ (7,4)\end{tabular} \\ \hline
+8  & 4  & (8-7)\textasciicircum{}2+(4-4)\textasciicircum{}2=1                                    \\ \hline
+4  & 5  & (4-7)\textasciicircum{}2+(5-4)\textasciicircum{}2=10                                   \\ \hline
+4  & 6  & (4-7)\textasciicircum{}2+(6-4)\textasciicircum{}2=13                                   \\ \hline
+7  & 7  & (7-7)\textasciicircum{}2+(7-4)\textasciicircum{}2=9                                    \\ \hline
+5  & 6  & (5-7)\textasciicircum{}2+(6-4)\textasciicircum{}2=8                                    \\ \hline
+6  & 5  & (6-7)\textasciicircum{}2+(5-4)\textasciicircum{}2=2                                    \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[]
+\centering
+\caption{contoh perhitungan k-nn (3)}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+X1 & X2 & Jarak Terkecil & K     & Y     \\ \hline
+8  & 4  & 1              & Ya    & Baik  \\ \hline
+4  & 5  & 5              & Tidak & -     \\ \hline
+4  & 6  & 6              & Tidak & -     \\ \hline
+7  & 7  & 4              & Ya    & Baik  \\ \hline
+5  & 6  & 3              & Ya    & Jelek \\ \hline
+6  & 5  & 2              & Ya    & Baik  \\ \hline
+\end{tabular}
+\end{table}
+
+\par Dengan mengurutkan jarak terkecil, semisal diambil K=3, maka perbandingan nya adalah 2 (Baik) >1 (Jelek). Maka dapat disimpulkan kertas tissue dengan attribute \textbf{X1=7} dan \textbf{X2=4} masuk ke kelas \textbf{Baik}.
